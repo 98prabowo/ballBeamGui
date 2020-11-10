@@ -22,7 +22,7 @@ function varargout = ballbeamgui(varargin)
 
 % Edit the above text to modify the response to help ballbeamgui
 
-% Last Modified by GUIDE v2.5 25-Oct-2020 23:55:51
+% Last Modified by GUIDE v2.5 11-Nov-2020 04:32:34
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -45,7 +45,7 @@ end
 
 
 % --- Executes just before ballbeamgui is made visible.
-function ballbeamgui_OpeningFcn(hObject, eventdata, handles, varargin)
+function ballbeamgui_OpeningFcn(hObject, ~, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -63,7 +63,7 @@ guidata(hObject, handles);
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = ballbeamgui_OutputFcn(hObject, eventdata, handles) 
+function varargout = ballbeamgui_OutputFcn(~, ~, handles) 
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -73,8 +73,31 @@ function varargout = ballbeamgui_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 
+% --- Executes on selection change in input_sinyal.
+function input_sinyal_Callback(~, ~, ~)
+% hObject    handle to input_sinyal (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
 
-function R_Callback(hObject, eventdata, handles)
+% Hints: contents = cellstr(get(hObject,'String')) returns input_sinyal contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from input_sinyal
+    
+    
+
+% --- Executes during object creation, after setting all properties.
+function input_sinyal_CreateFcn(hObject, ~, ~)
+% hObject    handle to input_sinyal (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: popupmenu controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+function R_Callback(~, ~, ~)
 % hObject    handle to R (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -84,7 +107,7 @@ function R_Callback(hObject, eventdata, handles)
 
 
 % --- Executes during object creation, after setting all properties.
-function R_CreateFcn(hObject, eventdata, handles)
+function R_CreateFcn(hObject, ~, ~)
 % hObject    handle to R (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
@@ -101,7 +124,7 @@ NN=num2str(NN);
 set(hObject,'String',NN);
 set_param('Ballbeam2020a','SimulationCommand','update');
 
-function Kp_Callback(hObject, eventdata, handles)
+function Kp_Callback(~, ~, ~)
 % hObject    handle to Kp (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -110,7 +133,7 @@ function Kp_Callback(hObject, eventdata, handles)
 %        str2double(get(hObject,'String')) returns contents of Kp as a double
 
 % --- Executes during object creation, after setting all properties.
-function Kp_CreateFcn(hObject, eventdata, handles)
+function Kp_CreateFcn(hObject, ~, ~)
 % hObject    handle to Kp (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
@@ -127,7 +150,7 @@ NN=num2str(NN);
 set(hObject,'String',NN);
 set_param('Ballbeam2020a','SimulationCommand','update');
 
-function Kd_Callback(hObject, eventdata, handles)
+function Kd_Callback(~, ~, ~)
 % hObject    handle to Kd (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -139,7 +162,7 @@ function Kd_Callback(hObject, eventdata, handles)
 
 
 % --- Executes during object creation, after setting all properties.
-function Kd_CreateFcn(hObject, eventdata, handles)
+function Kd_CreateFcn(hObject, ~, ~)
 % hObject    handle to Kd (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
@@ -156,7 +179,7 @@ NN=num2str(NN);
 set(hObject,'String',NN);
 set_param('Ballbeam2020a','SimulationCommand','update');
 
-function Num_Callback(hObject, eventdata, handles)
+function Num_Callback(~, ~, ~)
 % hObject    handle to Num (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -168,7 +191,7 @@ function Num_Callback(hObject, eventdata, handles)
 
 
 % --- Executes during object creation, after setting all properties.
-function Num_CreateFcn(hObject, eventdata, handles)
+function Num_CreateFcn(hObject, ~, ~)
 % hObject    handle to Num (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
@@ -185,7 +208,7 @@ NN=num2str(NN);
 set(hObject,'String',NN);
 set_param('Ballbeam2020a','SimulationCommand','update');
 
-function Den_Callback(hObject, eventdata, handles)
+function Den_Callback(~, ~, ~)
 % hObject    handle to Den (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -197,7 +220,7 @@ function Den_Callback(hObject, eventdata, handles)
 
 
 % --- Executes during object creation, after setting all properties.
-function Den_CreateFcn(hObject, eventdata, handles)
+function Den_CreateFcn(hObject, ~, ~)
 % hObject    handle to Den (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
@@ -216,7 +239,7 @@ set_param('Ballbeam2020a','SimulationCommand','update');
 
 
 % --- Executes on button press in Run.
-function Run_Callback(hObject, eventdata, handles)
+function Run_Callback(hObject, ~, handles)
 % hObject    handle to Run (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -257,7 +280,7 @@ handles.timer = timer('Name','MyTimer',               ...
           y_predicted = rto_r_predicted.OutputPort(1).Data;
  
 set(handles.plotR,'xLim',[x_time-10 x_time+20]);
-set(handles.plotR,'yLim',[-2 10]);
+set(handles.plotR,'yLim',[-10 10]);
 plot(handles.plotR,[x_time x_time],[y_measured y_measured], 'bo', 'LineWidth', 1, 'MarkerSize', 1);
 hold on;
 plot(handles.plotR,[x_time x_time],[y_predicted y_predicted], 'ro', 'LineWidth', 1, 'MarkerSize', 1);
@@ -285,20 +308,24 @@ hold on;
  end
 
  % --- Executes on button press in Apply.
-function Apply_Callback(hObject, eventdata, handles)
+function Apply_Callback(~, ~, handles)
 % hObject    handle to Apply (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
 %get the user entered value for gain and convert it to a string
+val_Input = get(handles.input_sinyal,'Value');
 val_R = str2num(get(handles.R,'String'));
 val_Kp = str2num(get(handles.Kp,'String'));
 val_Kd = str2num(get(handles.Kd,'String'));
 val_Num = str2num(get(handles.Num,'String'));
 val_Den = str2num(get(handles.Den,'String'));
 
+
+
 %update both the model and the current string in the gain window.
 if(val_R)
+    assignin('base','SW_Control',val_Input);
     assignin('base','R',val_R);
     assignin('base','Kp',val_Kp);
     assignin('base','Kd',val_Kd);
@@ -306,11 +333,13 @@ if(val_R)
     assignin('base','Den',val_Den);
     set_param('Ballbeam2020a','SimulationCommand','update');
 else
+    val_Input = evalin('base','SW_Control');
     val_R = evalin('base','R');
     val_Kp = evalin('base','Kp');
     val_Kd = evalin('base','Kd');
     val_Num = evalin('base','Num');
     val_Den = evalin('base','Den');
+    set(handles.input_sinyal,'Value',val_Input);
     set(handles.R,'String',num2str(val_R));
     set(handles.Kp,'String',num2str(val_Kp));
     set(handles.Kd,'String',num2str(val_Kd));
@@ -319,7 +348,7 @@ else
 end
  
 % --- Executes on button press in Stop.
-function Stop_Callback(hObject, eventdata, handles)
+function Stop_Callback(~, ~, handles)
 % hObject    handle to Stop (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
