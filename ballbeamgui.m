@@ -158,9 +158,6 @@ function Kd_Callback(~, ~, ~)
 % Hints: get(hObject,'String') returns contents of Kd as text
 %        str2double(get(hObject,'String')) returns contents of Kd as a double
 
-
-
-
 % --- Executes during object creation, after setting all properties.
 function Kd_CreateFcn(hObject, ~, ~)
 % hObject    handle to Kd (see GCBO)
@@ -186,9 +183,6 @@ function Num_Callback(~, ~, ~)
 
 % Hints: get(hObject,'String') returns contents of Num as text
 %        str2double(get(hObject,'String')) returns contents of Num as a double
-
-
-
 
 % --- Executes during object creation, after setting all properties.
 function Num_CreateFcn(hObject, ~, ~)
@@ -216,9 +210,6 @@ function Den_Callback(~, ~, ~)
 % Hints: get(hObject,'String') returns contents of Den as text
 %        str2double(get(hObject,'String')) returns contents of Den as a double
 
-
-
-
 % --- Executes during object creation, after setting all properties.
 function Den_CreateFcn(hObject, ~, ~)
 % hObject    handle to Den (see GCBO)
@@ -245,7 +236,6 @@ function Run_Callback(hObject, ~, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 set_param('Ballbeam2020a','SimulationCommand','start');
-% set_param('Ballbeam2020a','SimulationCommand','continue');
 
 vrWorld = vrworld('ballbeam.wrl');
 open(vrWorld);
