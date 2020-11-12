@@ -249,8 +249,8 @@ handles.timer = timer('Name','MyTimer',               ...
                        'ExecutionMode','fixedSpacing', ...
                        'TimerFcn',{@timerCallback,hObject}); 
                    
- guidata(hObject,handles);
- start(handles.timer);
+guidata(hObject,handles);
+start(handles.timer);
  
  function [] = timerCallback(~,~,guiHandle)
  if ~isempty(guiHandle)
@@ -279,6 +279,8 @@ hold on;
 hChildren = get(handles.plotR,'Children');
 xData1 = get(hChildren(:),'XData');
 yData1 = get(hChildren(:),'YData');
+
+% inisiasi data x dan y
 ns = size(xData1,1);
 ax = [0 0 0 0]';
 ay = [0 0 0 0]';
